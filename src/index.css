@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 16% 12%;
+    --foreground: 25 10% 92%;
+
+    --card: 39 10% 16%;
+    --card-foreground: 25 10% 92%;
+
+    --popover: 39 10% 16%;
+    --popover-foreground: 25 10% 92%;
+
+    --primary: 25 15% 82%;
+    --primary-foreground: 40 16% 12%;
+
+    --secondary: 35 12% 24%;
+    --secondary-foreground: 25 15% 82%;
+
+    --muted: 35 8% 28%;
+    --muted-foreground: 25 5% 65%;
+
+    --accent: 35 30% 28%;
+    --accent-foreground: 25 15% 82%;
+
+    --destructive: 0 65% 40%;
+    --destructive-foreground: 25 15% 82%;
+
+    --border: 35 12% 24%;
+    --input: 35 12% 24%;
+    --ring: 35 35% 60%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif;
+    background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-typewriter text-primary;
+  }
+}
+
+@layer components {
+  .war-quote {
+    @apply relative font-typewriter text-xl md:text-2xl text-primary italic py-6 px-4 my-4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .war-quote::before, .war-quote::after {
+    @apply text-3xl text-blood-faded opacity-70 absolute;
+  }
+  
+  .war-quote::before {
+    content: '"';
+    top: 0;
+    left: 0;
+  }
+  
+  .war-quote::after {
+    content: '"';
+    bottom: 0;
+    right: 0;
+  }
+
+  .typewriter-effect {
+    @apply relative inline-block overflow-hidden whitespace-nowrap border-r-2 border-primary pr-1;
+    animation: typewriter 3.5s steps(40) 1s forwards,
+               blinkCursor 0.75s step-end infinite;
+  }
+
+  .paper-effect {
+    @apply bg-paper/10 backdrop-blur-sm border border-paper/30 rounded-md shadow-lg;
+  }
+  
+  .section-heading {
+    @apply relative inline-block font-typewriter text-3xl md:text-5xl text-primary mb-8 pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-16 after:h-1 after:bg-blood;
+  }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  from, to { border-color: transparent; }
+  50% { border-color: hsl(var(--primary)); }
+}
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
