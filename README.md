@@ -1,73 +1,46 @@
-# Welcome to your Lovable project
+# G'arbiy frontda o'zgarish yo'q - Web Project
 
-## Project info
+> "Urush paytida hech narsa avvalgidek emas."
 
-**URL**: https://lovable.dev/projects/15f53679-77bf-4100-bb74-1f40d892209d
+This is a creative web project based on the novel **"Im Westen nichts Neues"** (*All Quiet on the Western Front*) by **Erich Maria Remarque**. The website explores the key themes, characters, and emotional impact of the book through an interactive and visually engaging format.
 
-## How can I edit this code?
+## 🖼️ Overview
 
-There are several ways of editing your application.
+This website was created as a literature project to reflect on the emotional depth, anti-war message, and tragic journey of **Paul Bäumer**, a young German soldier in World War I. The content is presented in Uzbek to make the experience accessible to local audiences.
 
-**Use Lovable**
+## 📚 Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/15f53679-77bf-4100-bb74-1f40d892209d) and start prompting.
+- 🧠 **Book Summary & Author Info**
+- 💣 **Themes of War & Humanity**
+- 👥 **Paul’s Character Journey**
+- 💌 **Letters from Home**
+- 🥾 **Soldier Equipment (interactive section)**
+- 🎧 **Audiobook & Film Links**
+- 🎬 **Emotional Fade-out Ending Scene**
+- 📱 **Fully responsive design (planned)**
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Tech Stack
 
-**Use your preferred IDE**
+- HTML5  
+- CSS3  
+- JavaScript (planned for interactivity)
+- Figma (for design planning, optional)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 💡 Ideas to Improve
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Add animations or transitions for smoother UX
+- Include audio snippets or background war sound effects
+- Add multiple language support (Uzbek, English, German)
+- Build a timeline of Paul’s journey
+- Host it on GitHub Pages or Netlify
 
-Follow these steps:
+## 👨‍💻 Author
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Developed by **Samandar Numonov**  
+Literature project at **Presidential School, Fergana**  
+> "This website is dedicated to remembering the lost voices of war."
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📜 License
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/15f53679-77bf-4100-bb74-1f40d892209d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is made for educational purposes only.  
+All media and references belong to their respective owners.
