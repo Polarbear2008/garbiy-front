@@ -5,6 +5,7 @@ const EndingScene = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
   const [hasReachedBottom, setHasReachedBottom] = useState(false);
+  const [typingProgress, setTypingProgress] = useState(0);
   
   const endingTexts = [
     "Paul Baymer  1899-1928",
@@ -19,19 +20,18 @@ const EndingScene = () => {
       const documentHeight = document.documentElement.scrollHeight;
       const windowHeight = window.innerHeight;
       
-      // Check if scrolling down to the bottom
       if (scrollPosition + windowHeight >= documentHeight - 100) {
         setHasReachedBottom(true);
       } else {
         setHasReachedBottom(false);
       }
       
-      // Show ending scene only when at bottom
       if (hasReachedBottom) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
         setTextIndex(0);
+        setTypingProgress(0);
       }
     };
 
@@ -41,13 +41,21 @@ const EndingScene = () => {
 
   useEffect(() => {
     if (isVisible && textIndex < endingTexts.length) {
+      const currentText = endingTexts[textIndex];
+      const typingInterval = 200; // 200ms per character for slower typing
+      
       const timer = setTimeout(() => {
-        setTextIndex(prev => prev + 1);
-      }, 2000);
+        if (typingProgress < currentText.length) {
+          setTypingProgress(prev => prev + 1);
+        } else {
+          setTextIndex(prev => prev + 1);
+          setTypingProgress(0);
+        }
+      }, typingInterval);
       
       return () => clearTimeout(timer);
     }
-  }, [isVisible, textIndex]);
+  }, [isVisible, textIndex, typingProgress]);
 
   if (!isVisible) return null;
 
@@ -60,10 +68,11 @@ const EndingScene = () => {
             className={cn(
               "text-paper text-center font-typewriter mb-6 sm:mb-8 transition-opacity duration-1000",
               index === 0 ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl",
-              index <= textIndex ? "opacity-100" : "opacity-0"
+              index === textIndex ? "opacity-100" : "opacity-0"
             )}
           >
-            {text}
+            {text.substring(0, typingProgress)}
+            {typingProgress < text.length && <span className="animate-blink">|</span>}
           </p>
         ))}
       </div>
