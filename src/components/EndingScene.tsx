@@ -8,7 +8,7 @@ const EndingScene = () => {
   const [typingProgress, setTypingProgress] = useState(0);
   
   const endingTexts = [
-    "Paul Baymer  1899-1928",
+    "Paul Baumer 1896-1918",
     "U 1918-yilning oktabr oyida halok bo'ldi. Urush tugashiga atigi bir oy qolgan edi.",
     "O'sha kun tinchgina o'tgan, g'alati sukunat hukm surgan edi. Frontda hech qanday hujum bo'lmagan.",
     "Ofitserlar hisobotga faqat bir so'z yozishdi: 'G'arbiy frontda o'zgarish yo'q…'"
@@ -42,7 +42,7 @@ const EndingScene = () => {
   useEffect(() => {
     if (isVisible && textIndex < endingTexts.length) {
       const currentText = endingTexts[textIndex];
-      const typingInterval = 200; // 200ms per character for slower typing
+      const typingInterval = 150; // 150ms per character for faster typing
       
       const timer = setTimeout(() => {
         if (typingProgress < currentText.length) {
